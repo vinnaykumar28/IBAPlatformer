@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerLevelTwo : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 8f;
@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D r2D;
     private SpriteRenderer SPR;
     public GameObject MenuUI;
-    public GameObject DialogueUI;
-    public GameObject QuestionUI;
     public GameObject dimension;
     public GameObject dimensionTilemap;
     public bool checkdim = false;
@@ -85,26 +83,15 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Finish"))
+        if (other.gameObject.CompareTag("Door"))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(3);
         } 
-        else if (other.gameObject.CompareTag("Player"))
-        {
-            MenuUI.SetActive(true);
-            DialogueUI.SetActive(true);
-        }   
-        else if (other.gameObject.CompareTag("Enemy"))
-        {
-            MenuUI.SetActive(true);
-            QuestionUI.SetActive(true); 
-        }
 
         else if (other.gameObject.CompareTag("Acid"))
         {
             SceneManager.LoadScene(2);
         }
-
 
     }
 }

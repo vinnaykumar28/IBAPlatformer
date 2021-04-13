@@ -90,7 +90,7 @@ public class PlayerControllerLevelThree : MonoBehaviour
 
         else if (other.gameObject.CompareTag("Acid"))
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(3);
         }
 
     }
