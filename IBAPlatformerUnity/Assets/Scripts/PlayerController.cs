@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if(checkdim){
-            if(dimension.transform.localScale.y < 100){
+            if(dimension.transform.localScale.y < 650){
                 dimension.transform.localScale += new Vector3(50f * Time.deltaTime,50f * Time.deltaTime, 0);
             } 
         }

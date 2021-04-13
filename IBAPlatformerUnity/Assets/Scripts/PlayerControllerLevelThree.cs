@@ -62,7 +62,7 @@ public class PlayerControllerLevelThree : MonoBehaviour
         }
 
         if(checkdim){
-            if(dimension.transform.localScale.y < 100){
+            if(dimension.transform.localScale.y < 650){
                 dimension.transform.localScale += new Vector3(50f * Time.deltaTime,50f * Time.deltaTime, 0);
             } 
         }
@@ -85,7 +85,7 @@ public class PlayerControllerLevelThree : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Door"))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(5);
         } 
 
         else if (other.gameObject.CompareTag("Acid"))

@@ -19,7 +19,7 @@ namespace Gamekit2D
         public float speed = 1.0f;
         public MovingPlatformType platformType;
 
-        public bool startMovingOnlyWhenVisible = true;
+        public bool startMovingOnlyWhenVisible;
         public bool isMovingAtStart = true;
 
         [HideInInspector]
