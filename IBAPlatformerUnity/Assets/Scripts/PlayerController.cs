@@ -18,15 +18,14 @@ public class PlayerController : MonoBehaviour
     public GameObject dimension;
     public GameObject dimensionTilemap;
     public bool checkdim = false;
-
-    private Animator anime;
+    //private Animator anime;
 
     void Start()
     {
         Debug.Log("HASSAN IS A LEGEND!");
         trans = GetComponent<Transform>();
         r2D = GetComponent<Rigidbody2D>();
-        anime = GetComponent<Animator>();
+        //anime = GetComponent<Animator>();
         SPR = GetComponent<SpriteRenderer>();
     }
 
@@ -35,21 +34,19 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !jumpCheck)
         {
-            anime.SetBool("jumpTrue", true);
             r2D.velocity = new Vector2(r2D.velocity.x, jumpForce);
             jumpCheck = true;
-            //anime.SetBool("jumpTrue", false);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             r2D.velocity = new Vector2(moveSpeed, r2D.velocity.y);
-            anime.SetBool("runTrue", true);
+            //anime.SetBool("Run", true);
             SPR.flipX = false;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             r2D.velocity = new Vector2(-moveSpeed, r2D.velocity.y);
-            anime.SetBool("runTrue", true);
+            //anime.SetBool("Run", true);
             SPR.flipX = true;
         }
         else if (Input.GetKey(KeyCode.D))
@@ -64,11 +61,6 @@ public class PlayerController : MonoBehaviour
                 dimensionTilemap.SetActive(false);
                 checkdim = false;
             }
-        }
-        else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            anime.SetBool("runTrue", false);
-            r2D.velocity = new Vector2(0, r2D.velocity.y);
         }
 
         if(checkdim){
@@ -88,7 +80,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("GameController"))
         {
             jumpCheck = false;
-            anime.SetBool("jumpTrue", false);
         }
     }
     
