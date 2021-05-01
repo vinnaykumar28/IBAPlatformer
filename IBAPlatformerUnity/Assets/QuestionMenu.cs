@@ -10,6 +10,6 @@ public class QuestionMenu : MonoBehaviour
     }
 
     public void NoGame(){
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 }

@@ -37,8 +37,6 @@ namespace Gamekit2D
         public float tension = 0.025f;
         public float neighbourTransfer = 0.03f;
 
-        public RandomAudioPlayer splashPlayerPrefab;
-
         public BoxCollider2D boxCollider2D
         {
             get { return m_BoxCollider; }
@@ -49,7 +47,6 @@ namespace Gamekit2D
         protected Mesh m_Mesh;
 
         protected BoxCollider2D m_BoxCollider;
-        protected Damager m_Damager;
         protected ParticleSystem m_Bubbles;
         protected ParticleSystem m_Steam;
         protected BuoyancyEffector2D m_BuoyancyEffector;
@@ -70,22 +67,7 @@ namespace Gamekit2D
             m_BoxCollider.isTrigger = true;
 
 #if UNITY_EDITOR
-            if (Application.isPlaying)
-            {
-                //we don't want to do it in editor when not playing as it would leak object
-#endif
-                if (splashPlayerPrefab != null)
-                {
-                    m_SplashSourcePool = new RandomAudioPlayer[m_SplashPlayerPoolSize];
-                    for (int i = 0; i < m_SplashPlayerPoolSize; ++i)
-                    {
-                        m_SplashSourcePool[i] = Instantiate(splashPlayerPrefab);
-                        m_SplashSourcePool[i].transform.SetParent(transform);
-                        m_SplashSourcePool[i].gameObject.SetActive(false);
-                    }
-                }
-#if UNITY_EDITOR
-            }
+            
 #endif
             AdjustComponentSizes();
             RecomputeMesh();
@@ -112,8 +94,6 @@ namespace Gamekit2D
             m_Filter = GetComponent<MeshFilter>();
 
             m_BoxCollider = GetComponent<BoxCollider2D>();
-
-            m_Damager = GetComponent<Damager>();
             m_Bubbles = transform.Find("Bubbles").GetComponent<ParticleSystem>();
             m_Steam = transform.Find("Steam").GetComponent<ParticleSystem>();
             m_BuoyancyEffector = GetComponent<BuoyancyEffector2D>();
@@ -125,7 +105,6 @@ namespace Gamekit2D
             for (int i = 0; i < m_Columns.Length; ++i)
             {
                 //float ratio = ((float)i) / m_columns.Length;
-
                 float leftDelta = 0;
                 if (i > 0)
                     leftDelta = neighbourTransfer * (m_Columns[i - 1].currentHeight - m_Columns[i].currentHeight);
@@ -179,9 +158,6 @@ namespace Gamekit2D
 #if UNITY_EDITOR
             }
 #endif
-
-            m_Damager.size = size;
-            m_Damager.offset = offset;
 
             m_BoxCollider.size = size;
             m_BoxCollider.offset = offset;
@@ -275,10 +251,6 @@ namespace Gamekit2D
             if (!Application.isPlaying)
                 return;
 #endif
-
-            if (splashPlayerPrefab == null)
-                return; //the splash prefab wasn't set, we don't have any instance of it to play sound
-
             int use = m_CurrentSplashPlayer;
             m_CurrentSplashPlayer = (m_CurrentSplashPlayer + 1) % m_SplashPlayerPoolSize;
 
