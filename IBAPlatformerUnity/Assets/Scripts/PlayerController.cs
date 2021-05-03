@@ -23,11 +23,14 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        // GetComponent<AudioSource>().Pause();
         Debug.Log("HASSAN IS A LEGEND!");
         trans = GetComponent<Transform>();
         r2D = GetComponent<Rigidbody2D>();
         anime = GetComponent<Animator>();
         SPR = GetComponent<SpriteRenderer>();
+        GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().Pause();
     }
 
     // Update is called once per frame
@@ -42,14 +45,22 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
+            //GetComponent<AudioSource>().Play();
+            if (jumpCheck) GetComponent<AudioSource>().Pause();
+            else GetComponent<AudioSource>().UnPause();
             r2D.velocity = new Vector2(moveSpeed, r2D.velocity.y);
             anime.SetBool("runTrue", true);
+            //GetComponent<AudioSource>().UnPause();
             SPR.flipX = false;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
+            //GetComponent<AudioSource>().Play();
+            if (jumpCheck) GetComponent<AudioSource>().Pause();
+            else GetComponent<AudioSource>().UnPause();
             r2D.velocity = new Vector2(-moveSpeed, r2D.velocity.y);
             anime.SetBool("runTrue", true);
+            // GetComponent<AudioSource>().UnPause();
             SPR.flipX = true;
         }
         else if (Input.GetKey(KeyCode.D))
@@ -67,6 +78,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
         {
+            GetComponent<AudioSource>().Pause();
             anime.SetBool("runTrue", false);
             jumpCheck = false;
             r2D.velocity = new Vector2(0, r2D.velocity.y);
