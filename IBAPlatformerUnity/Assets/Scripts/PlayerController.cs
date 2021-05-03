@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
         {
             anime.SetBool("runTrue", false);
+            jumpCheck = false;
             r2D.velocity = new Vector2(0, r2D.velocity.y);
         }
 
