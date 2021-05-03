@@ -165,10 +165,12 @@ public class PlayerController : MonoBehaviour
     }
 
     public void JumpMobile(){
-        anime.SetBool("jumpTrue", true);
-        r2D.velocity = new Vector2(r2D.velocity.x, jumpForce);
-        jumpCheck = true;
-        //anime.SetBool("jumpTrue", false);
+        if(!jumpCheck){
+            anime.SetBool("jumpTrue", true);
+            r2D.velocity = new Vector2(r2D.velocity.x, jumpForce);
+            jumpCheck = true;
+            //anime.SetBool("jumpTrue", false);
+        }
     }
 
     public void LeftMobile(){

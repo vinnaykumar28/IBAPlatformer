@@ -9664,7 +9664,7 @@ GameObject:
   - component: {fileID: 1234702481}
   m_Layer: 31
   m_Name: TilemapGrid
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
