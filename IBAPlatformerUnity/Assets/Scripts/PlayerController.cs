@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public int index;
     public float moveSpeed = 5f;
     public float jumpForce = 8f;
     public bool jumpCheck = false;
-
     private Transform trans;
     private Rigidbody2D r2D;
     private SpriteRenderer SPR;
@@ -23,16 +23,14 @@ public class PlayerController : MonoBehaviour
     public Button ButtonDimension;
     public Button ButtonJump;    
     public bool checkdim = false;
-
     private bool rightMove = false;
     private bool leftMove = false;
-
     private Animator anime;
 
     void Start()
     {
         // GetComponent<AudioSource>().Pause();
-        Debug.Log("HASSAN IS A LEGEND!");
+        Debug.Log("HASSAN was A LEGEND!");
         trans = GetComponent<Transform>();
         r2D = GetComponent<Rigidbody2D>();
         anime = GetComponent<Animator>();
@@ -145,6 +143,11 @@ public class PlayerController : MonoBehaviour
         }
         */
 
+        if (transform.position.y < -7)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         if(leftMove){
             LeftMobile();
         }
@@ -154,12 +157,19 @@ public class PlayerController : MonoBehaviour
 
         if(checkdim){
             if(dimension.transform.localScale.y < 100){
-                dimension.transform.localScale += new Vector3(50f * Time.deltaTime,50f * Time.deltaTime, 0);
+                //dimension.transform.localScale += new Vector3(50f * Time.deltaTime,50f * Time.deltaTime, 0);
+                dimension.transform.localScale = Vector3.Lerp(dimension.transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.01f);
             } 
         }
         else{
             if(dimension.transform.localScale.y > 0){
-                dimension.transform.localScale = new Vector3(0, 0, 0);
+                //dimension.transform.localScale = new Vector3(0, 0, 0);
+                 dimension.transform.localScale = Vector3.Lerp(dimension.transform.localScale, new Vector3(0, 0, 1.0f), 0.02f);
+                 if (dimension.transform.localScale.y <= 2.0f)
+                 {
+                    dimension.SetActive(false);
+                    dimensionTilemap.SetActive(false);
+                 }
             }
         }
     }
@@ -211,8 +221,8 @@ public class PlayerController : MonoBehaviour
             checkdim = true;
         }
         else{
-            dimension.SetActive(false);
-            dimensionTilemap.SetActive(false);
+            // dimension.SetActive(false);
+            // dimensionTilemap.SetActive(false);
             checkdim = false;
         }
     }
@@ -228,19 +238,21 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Finish"))
-        {
-            SceneManager.LoadScene(0);
-        } 
-        else if (other.gameObject.CompareTag("Player"))
+        // if (other.gameObject.CompareTag("Finish"))
+        // {
+        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // } 
+        if (other.gameObject.CompareTag("Player"))
         {
             MenuUI.SetActive(true);
             DialogueUI.SetActive(true);
         }   
         else if (other.gameObject.CompareTag("Enemy"))
         {
-            MenuUI.SetActive(true);
-            QuestionUI.SetActive(true); 
+            // MenuUI.SetActive(true);
+            // QuestionUI.SetActive(true); 
+            SceneManager.LoadScene("Transition");
+            Story.SetIndex(index);
         }
 
 
