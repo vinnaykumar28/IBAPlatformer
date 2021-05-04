@@ -8,6 +8,8 @@ TagManager:
   - orb
   - Acid
   - Door
+  - cLeft
+  - cRight
   layers:
   - Default
   - TransparentFX
