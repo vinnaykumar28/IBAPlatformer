@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer SPR;
     public GameObject MenuUI;
     public GameObject DialogueUI;
-    public GameObject QuestionUI;
-    public GameObject dimension;
+    //public GameObject QuestionUI;
+    public GameObject[] dimension;
     public GameObject dimensionTilemap;
     public Button ButtonLeft;
     public Button ButtonRight;
@@ -155,22 +155,25 @@ public class PlayerController : MonoBehaviour
             RightMobile();
         }
 
-        if(checkdim){
-            if(dimension.transform.localScale.y < 100){
+        for (int i = 0; i < dimension.Length; i++)
+        {
+            if(checkdim){
+            if(dimension[i].transform.localScale.y < 100){
                 //dimension.transform.localScale += new Vector3(50f * Time.deltaTime,50f * Time.deltaTime, 0);
-                dimension.transform.localScale = Vector3.Lerp(dimension.transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.005f);
+                dimension[i].transform.localScale = Vector3.Lerp(dimension[i].transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.005f);
             } 
         }
-        else{
-            if(dimension.transform.localScale.y > 0){
+            else{
+            if(dimension[i].transform.localScale.y > 0){
                 //dimension.transform.localScale = new Vector3(0, 0, 0);
-                 dimension.transform.localScale = Vector3.Lerp(dimension.transform.localScale, new Vector3(0, 0, 1.0f), 0.01f);
-                 if (dimension.transform.localScale.y <= 2.0f)
+                 dimension[i].transform.localScale = Vector3.Lerp(dimension[i].transform.localScale, new Vector3(0, 0, 1.0f), 0.01f);
+                 if (dimension[i].transform.localScale.y <= 2.0f)
                  {
-                    dimension.SetActive(false);
+                    dimension[i].SetActive(false);
                     dimensionTilemap.SetActive(false);
                  }
             }
+        }
         }
     }
 
@@ -216,7 +219,10 @@ public class PlayerController : MonoBehaviour
 
     public void DimensionMobile(){
         if(!checkdim){
-            dimension.SetActive(true);
+            for (int i = 0; i < dimension.Length; i++)
+            {
+                dimension[i].SetActive(true);
+            }
             dimensionTilemap.SetActive(true);
             checkdim = true;
         }
@@ -248,14 +254,28 @@ public class PlayerController : MonoBehaviour
             DialogueUI.SetActive(true);
             //anime.SetBool("ghostWalk", true);
         }   
+        else if (other.gameObject.CompareTag("Goal"))
+        {
+            // MenuUI.SetActive(true);
+            // QuestionUI.SetActive(true); 
+            // Story.SetIndex();
+            // SceneManager.LoadScene("Transition");
+            //Story.SetIndex();
+            SceneManager.LoadScene(Story.getIndex());
+        }
         else if (other.gameObject.CompareTag("Enemy"))
         {
             // MenuUI.SetActive(true);
             // QuestionUI.SetActive(true); 
+            Story.SetIndex();
             SceneManager.LoadScene("Transition");
-            Story.SetIndex(index);
+            //Story.SetIndex();
         }
 
+        else if (other.gameObject.CompareTag("Acid"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
     }
 }

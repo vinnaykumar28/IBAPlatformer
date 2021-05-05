@@ -10,6 +10,8 @@ TagManager:
   - Door
   - cLeft
   - cRight
+  - MainChar
+  - Goal
   layers:
   - Default
   - TransparentFX

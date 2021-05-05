@@ -47,7 +47,7 @@ public class ghostWalker : MonoBehaviour
     {
         if (!check)
         {
-            r2D.velocity = new Vector2(8f, r2D.velocity.y);
+            r2D.velocity = new Vector2(7f, r2D.velocity.y);
             anime.SetBool("ghostRunner", true);
             B2D.enabled = false;
             check = true;

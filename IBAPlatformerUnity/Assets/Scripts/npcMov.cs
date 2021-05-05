@@ -6,8 +6,6 @@ public class npcMov : MonoBehaviour
 {
     public float moveSpeed = 5f;
 
-    private bool rightCheck = true;
-
     private Rigidbody2D r2D;
     private SpriteRenderer SPR;
 
@@ -17,13 +15,28 @@ public class npcMov : MonoBehaviour
     {
         r2D = GetComponent<Rigidbody2D>();
         SPR = GetComponent<SpriteRenderer>();
+        r2D.velocity = new Vector2(moveSpeed, r2D.velocity.y);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(rightCheck){
-            //r2D.velocity = new Vector2(r2D.velocity.x, jumpForce);
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("cRight"))
+        {
+            r2D.velocity = new Vector2(-moveSpeed, r2D.velocity.y);
+            SPR.flipX = false;
+        }   
+        else if (other.gameObject.CompareTag("cLeft"))
+        {
+            r2D.velocity = new Vector2(moveSpeed, r2D.velocity.y);
+            SPR.flipX = true;
         }
+
+
     }
 }

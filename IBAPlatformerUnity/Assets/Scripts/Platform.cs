@@ -4,37 +4,50 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
+    public float moveSpeed = 5f;
+    public bool leftRight = true;
 
-    private float startY;
-    public float endY;
-    private bool up;
-    public float minus;
+    private Rigidbody2D r2D;
 
     void Start() {
-        startY = transform.position.y - minus;
-        Debug.Log(startY);
-        Debug.Log(endY);
-        up = true;
+        r2D = GetComponent<Rigidbody2D>();
+
+        if(leftRight){
+            r2D.velocity = new Vector2(moveSpeed, r2D.velocity.y);
+        }
+        else{
+            r2D.velocity = new Vector2(r2D.velocity.x, moveSpeed);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(up){
-            if(transform.position.y - minus < endY){
-                transform.position = transform.position + new Vector3(0, 2f * Time.deltaTime, 0);
-            }
-            else{
-                up = false;
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(leftRight){
+            if (other.gameObject.CompareTag("cRight"))
+            {
+                r2D.velocity = new Vector2(moveSpeed, r2D.velocity.y);
+            }   
+            else if (other.gameObject.CompareTag("cLeft"))
+            {
+                r2D.velocity = new Vector2(-moveSpeed, r2D.velocity.y);
             }
         }
         else{
-            if(transform.position.y - minus > startY){
-                transform.position = transform.position - new Vector3(0, 2f * Time.deltaTime, 0);
-            }
-            else{
-                up = true;
+            if (other.gameObject.CompareTag("cRight"))
+            {
+                r2D.velocity = new Vector2(r2D.velocity.x, moveSpeed);
+            }   
+            else if (other.gameObject.CompareTag("cLeft"))
+            {
+                r2D.velocity = new Vector2(r2D.velocity.x, -moveSpeed);
             }
         }
+
     }
 }

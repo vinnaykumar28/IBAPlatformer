@@ -6,16 +6,21 @@ using TMPro;
 public class Story : MonoBehaviour
 {
     [SerializeField] private string[] dialogues;
-    static private int index = 0;
+    static private int index = 1;
     [SerializeField] private TextMeshProUGUI text;
 
     void Update()
     {
-        text.text = dialogues[index];
+        text.text = dialogues[index-2];
     }
 
-    static public void SetIndex(int i)
+    static public void SetIndex()
     {
-        index = i;
+        index++;
+    }
+
+    static public int getIndex()
+    {
+        return index;
     }
 }
