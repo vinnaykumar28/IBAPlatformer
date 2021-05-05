@@ -158,13 +158,13 @@ public class PlayerController : MonoBehaviour
         if(checkdim){
             if(dimension.transform.localScale.y < 100){
                 //dimension.transform.localScale += new Vector3(50f * Time.deltaTime,50f * Time.deltaTime, 0);
-                dimension.transform.localScale = Vector3.Lerp(dimension.transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.01f);
+                dimension.transform.localScale = Vector3.Lerp(dimension.transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.005f);
             } 
         }
         else{
             if(dimension.transform.localScale.y > 0){
                 //dimension.transform.localScale = new Vector3(0, 0, 0);
-                 dimension.transform.localScale = Vector3.Lerp(dimension.transform.localScale, new Vector3(0, 0, 1.0f), 0.02f);
+                 dimension.transform.localScale = Vector3.Lerp(dimension.transform.localScale, new Vector3(0, 0, 1.0f), 0.01f);
                  if (dimension.transform.localScale.y <= 2.0f)
                  {
                     dimension.SetActive(false);
@@ -246,6 +246,7 @@ public class PlayerController : MonoBehaviour
         {
             MenuUI.SetActive(true);
             DialogueUI.SetActive(true);
+            //anime.SetBool("ghostWalk", true);
         }   
         else if (other.gameObject.CompareTag("Enemy"))
         {

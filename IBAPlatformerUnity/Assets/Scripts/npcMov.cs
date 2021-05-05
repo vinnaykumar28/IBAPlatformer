@@ -23,7 +23,7 @@ public class npcMov : MonoBehaviour
     void Update()
     {
         if(rightCheck){
-            r2D.velocity = new Vector2(r2D.velocity.x, jumpForce);
+            //r2D.velocity = new Vector2(r2D.velocity.x, jumpForce);
         }
     }
 }
