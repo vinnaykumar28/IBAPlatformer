@@ -1936,9 +1936,16 @@ MonoBehaviour:
   - I am sure you have a lot of questions right now. You have gained the ability
     to see things hidden from others. See it as a curse, or a blessing. You shall
     soon see the complete picture. Things are... rarely as they seem.
-  - 12
-  - 455
-  - Bilal was here
+  - Does this all seem real to you? Or do you think this is all in your head? You
+    see, there are more entities here than just you and I. Avoid them if you need
+    answers.
+  - You seem to be focusing more and more. You are able to see the "middle world",
+    a place that is only in the real world, but still hidden from plain sight. I
+    am surprised at how determined you are to find answers. Do not worry, you shall
+    find them soon.
+  - 'I sense that your journey is close to an end. You will find your answers very
+    soon, but they will not come easy. Perhaps the journey has trained you for this.
+    I shall not reveal who I am, but know that I intend to help. '
   text: {fileID: 45663355}
 --- !u!1 &511345661
 GameObject:
@@ -2051,19 +2058,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff6237fe820557d43a90680b2a492f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
   moveSpeed: 5
   jumpForce: 8
   jumpCheck: 0
   MenuUI: {fileID: 505994507}
   DialogueUI: {fileID: 972379573}
-  QuestionUI: {fileID: 1546650297}
   dimension: []
   dimensionTilemap: {fileID: 667814371}
-  ButtonLeft: {fileID: 902450676}
-  ButtonRight: {fileID: 1638928183}
-  ButtonDimension: {fileID: 942121218}
-  ButtonJump: {fileID: 2082086214}
   checkdim: 0
 --- !u!82 &611524841
 AudioSource:

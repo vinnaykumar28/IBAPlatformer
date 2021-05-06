@@ -1,29 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class snake : MonoBehaviour
 {
-     //private Rigidbody2D r2D;
+    private Vector2 _direction = Vector2.right;
 
     private List<Transform> _segments = new List<Transform>();
 
-    //public float moveSpeed = 5f;
-
-    private Vector2 _direction = Vector2.right;
-
-    private int goal = 0;
-
     public Transform segmentPrefab;
 
-    public int initialSize = 4; 
+    public int initialSize = 1; 
 
     private void Start()
     {
-        ResetState();
-        //r2D = GetComponent<Rigidbody2D>();
-        //_direction = new Vector2(moveSpeed, r2D.velocity.y);
+
+      ResetState();
     }
 
     private void Update()
@@ -44,13 +36,13 @@ public class snake : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            //_direction = new Vector2(moveSpeed, r2D.velocity.y);
             _direction = Vector2.right;
         }
     }
     private void FixedUpdate()
     {
-        for (int i =_segments.Count - 1; i > 0; i--){
+        for (int i =_segments.Count - 1; i > 0; i--)
+            {
             _segments[i].position = _segments[i - 1].position;
         }
 
@@ -58,7 +50,7 @@ public class snake : MonoBehaviour
             Mathf.Round(this.transform.position.x) + _direction.x,
             Mathf.Round(this.transform.position.y) + _direction.y,
             0.0f
-        );
+            );
 
 
     }
@@ -80,7 +72,7 @@ public class snake : MonoBehaviour
         for (int i = 1; i < this.initialSize; i++) {
             _segments.Add(Instantiate(this.segmentPrefab));
         }
-        this.transform.position = Vector3.zero;
+        this.transform.position = new Vector3(-22, -10, 0);
     
     }
 
@@ -90,12 +82,7 @@ public class snake : MonoBehaviour
 
         if (other.tag == "food")
         {
-            Grow();
-            goal++;
-
-            if(goal >= 3){
-                SceneManager.LoadScene(3);
-            }
+            ResetState();
         }
         else if (other.tag == "Obstacle") {
             ResetState();
