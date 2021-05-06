@@ -38,7 +38,7 @@ public class Platform : MonoBehaviour
                 r2D.velocity = new Vector2(-moveSpeed, r2D.velocity.y);
             }
         }
-        else{
+        else {
             if (other.gameObject.CompareTag("cRight"))
             {
                 r2D.velocity = new Vector2(r2D.velocity.x, moveSpeed);
@@ -50,4 +50,5 @@ public class Platform : MonoBehaviour
         }
 
     }
+
 }

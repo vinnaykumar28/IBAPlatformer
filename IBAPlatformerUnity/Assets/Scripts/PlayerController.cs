@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public int index;
+    //public int index;
     public float moveSpeed = 5f;
     public float jumpForce = 8f;
     public bool jumpCheck = false;
@@ -18,10 +18,10 @@ public class PlayerController : MonoBehaviour
     //public GameObject QuestionUI;
     public GameObject[] dimension;
     public GameObject dimensionTilemap;
-    public Button ButtonLeft;
-    public Button ButtonRight;
-    public Button ButtonDimension;
-    public Button ButtonJump;    
+    // public Button ButtonLeft;
+    // public Button ButtonRight;
+    // public Button ButtonDimension;
+    // public Button ButtonJump;    
     public bool checkdim = false;
     private bool rightMove = false;
     private bool leftMove = false;
@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
         }
         */
 
-        if (transform.position.y < -7)
+        if (transform.position.y < -7 && SceneManager.GetActiveScene().buildIndex == 1)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
@@ -188,6 +188,7 @@ public class PlayerController : MonoBehaviour
 
     public void LeftMobile(){
         //GetComponent<AudioSource>().Play();
+        //Debug.Log("On your left");
         if (jumpCheck) GetComponent<AudioSource>().Pause();
         else GetComponent<AudioSource>().UnPause();
         r2D.velocity = new Vector2(-moveSpeed, r2D.velocity.y);
@@ -199,6 +200,7 @@ public class PlayerController : MonoBehaviour
 
     public void RightMobile(){
         //GetComponent<AudioSource>().Play();
+        //Debug.Log("On your left");
         if (jumpCheck) GetComponent<AudioSource>().Pause();
         else GetComponent<AudioSource>().UnPause();
         r2D.velocity = new Vector2(moveSpeed, r2D.velocity.y);
@@ -240,6 +242,28 @@ public class PlayerController : MonoBehaviour
             jumpCheck = false;
             anime.SetBool("jumpTrue", false);
         }
+
+        else if (collision.gameObject.CompareTag("Platform"))
+        {
+            Debug.Log("In platform collision");
+            r2D.gravityScale = 0;
+            r2D.mass = 0;
+
+            if (jumpCheck)
+            {
+                jumpCheck = false;
+                anime.SetBool("jumpTrue", false);
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Platform"))
+        {
+            r2D.gravityScale = 1;
+            r2D.mass = 1;
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -277,5 +301,11 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
+        else if (other.gameObject.CompareTag("End"))
+        {
+            SceneManager.LoadScene(0);
+        }
+
     }
+
 }

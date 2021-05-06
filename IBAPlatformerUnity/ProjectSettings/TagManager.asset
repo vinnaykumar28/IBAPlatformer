@@ -12,6 +12,8 @@ TagManager:
   - cRight
   - MainChar
   - Goal
+  - Platform
+  - End
   layers:
   - Default
   - TransparentFX
