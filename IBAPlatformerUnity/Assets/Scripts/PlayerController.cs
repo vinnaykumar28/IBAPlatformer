@@ -160,13 +160,13 @@ public class PlayerController : MonoBehaviour
             if(checkdim){
             if(dimension[i].transform.localScale.y < 100){
                 //dimension.transform.localScale += new Vector3(50f * Time.deltaTime,50f * Time.deltaTime, 0);
-                dimension[i].transform.localScale = Vector3.Lerp(dimension[i].transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.005f);
+                dimension[i].transform.localScale = Vector3.Lerp(dimension[i].transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.01f);
             } 
         }
             else{
             if(dimension[i].transform.localScale.y > 0){
                 //dimension.transform.localScale = new Vector3(0, 0, 0);
-                 dimension[i].transform.localScale = Vector3.Lerp(dimension[i].transform.localScale, new Vector3(0, 0, 1.0f), 0.01f);
+                 dimension[i].transform.localScale = Vector3.Lerp(dimension[i].transform.localScale, new Vector3(0, 0, 1.0f), 0.02f);
                  if (dimension[i].transform.localScale.y <= 2.0f)
                  {
                     dimension[i].SetActive(false);
