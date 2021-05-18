@@ -29,11 +29,15 @@ public class npcMov : MonoBehaviour
         if (other.gameObject.CompareTag("cRight"))
         {
             r2D.velocity = new Vector2(-moveSpeed, r2D.velocity.y);
+            if (SPR.flipX == true) 
             SPR.flipX = false;
+            else SPR.flipX = true;
         }   
         else if (other.gameObject.CompareTag("cLeft"))
         {
             r2D.velocity = new Vector2(moveSpeed, r2D.velocity.y);
+            if (SPR.flipX == true) SPR.flipX = false;
+            else 
             SPR.flipX = true;
         }
 
