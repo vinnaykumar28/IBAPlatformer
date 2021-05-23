@@ -6,17 +6,20 @@ public class Platform : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public bool leftRight = true;
+    public bool start = true;
 
     private Rigidbody2D r2D;
 
     void Start() {
         r2D = GetComponent<Rigidbody2D>();
 
-        if(leftRight){
-            r2D.velocity = new Vector2(moveSpeed, r2D.velocity.y);
-        }
-        else{
-            r2D.velocity = new Vector2(r2D.velocity.x, moveSpeed);
+        if(start){
+            if(leftRight){
+                r2D.velocity = new Vector2(moveSpeed, r2D.velocity.y);
+            }
+            else{
+                r2D.velocity = new Vector2(r2D.velocity.x, moveSpeed);
+            }
         }
     }
 
@@ -36,6 +39,7 @@ public class Platform : MonoBehaviour
             else if (other.gameObject.CompareTag("cLeft"))
             {
                 r2D.velocity = new Vector2(-moveSpeed, r2D.velocity.y);
+
             }
         }
         else {
@@ -49,6 +53,15 @@ public class Platform : MonoBehaviour
             }
         }
 
+    }
+
+    public void startMoving(){
+        if(leftRight){
+            r2D.velocity = new Vector2(moveSpeed, r2D.velocity.y);
+        }
+        else{
+            r2D.velocity = new Vector2(r2D.velocity.x, moveSpeed);
+        }
     }
 
 }

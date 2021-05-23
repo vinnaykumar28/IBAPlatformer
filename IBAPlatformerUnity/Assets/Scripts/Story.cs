@@ -23,4 +23,8 @@ public class Story : MonoBehaviour
     {
         return index;
     }
+
+    static public void newGame(){
+        index = 0;
+    }
 }

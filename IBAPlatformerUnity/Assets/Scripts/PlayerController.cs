@@ -22,10 +22,12 @@ public class PlayerController : MonoBehaviour
     // public Button ButtonRight;
     // public Button ButtonDimension;
     // public Button ButtonJump;    
-    public bool checkdim = false;
+    private bool checkdim = false;
     private bool rightMove = false;
     private bool leftMove = false;
     private Animator anime;
+    private static bool setPlayerPosition = false;
+    private static int SetPosLvl = 0; 
 
     void Start()
     {
@@ -37,6 +39,16 @@ public class PlayerController : MonoBehaviour
         SPR = GetComponent<SpriteRenderer>();
         GetComponent<AudioSource>().Play();
         GetComponent<AudioSource>().Pause();
+
+        if(setPlayerPosition){
+            if(SetPosLvl == 4){
+                trans.position = new Vector3(-35.34f, -7.346163f, 0);
+                SPR.flipX = false;
+            }
+
+            setPlayerPosition = false;
+            SetPosLvl = 0;
+        }
     }
 
     // Update is called once per frame
@@ -306,6 +318,16 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(0);
         }
 
+        else if (other.gameObject.CompareTag("Game2") && !checkdim)
+        {
+            SceneManager.LoadScene(7);
+        }
+
+    }
+
+    public static void returnToLevel(int lvl){
+        setPlayerPosition = true;
+        SetPosLvl = lvl;
     }
 
 }
