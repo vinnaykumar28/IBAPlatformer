@@ -225,7 +225,7 @@ public class PlayerController : MonoBehaviour
     public void CancelLeftRight(){
         GetComponent<AudioSource>().Pause();
         anime.SetBool("runTrue", false);
-        jumpCheck = false;
+        //jumpCheck = false;
         r2D.velocity = new Vector2(0, r2D.velocity.y);
         leftMove = false;
         rightMove = false;
