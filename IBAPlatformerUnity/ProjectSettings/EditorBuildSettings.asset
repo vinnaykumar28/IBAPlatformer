@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Transition.unity
     guid: eab3e21f9ff7e9542b7f784db19c59e5
   - enabled: 1
-    path: Assets/Scenes/MemoryMiniGame.unity
+    path: Assets/Scenes/Mini games/BrickMiniGame.unity
+    guid: 7931f4bdbadaa1a4eb31cb517362331e
+  - enabled: 1
+    path: Assets/Scenes/Mini games/MemoryMiniGame.unity
     guid: e161646c74c992f4dbce1154ec488bae
   m_configObjects: {}

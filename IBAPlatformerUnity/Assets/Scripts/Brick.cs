@@ -1,16 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Brick : MonoBehaviour {
 
-	public AudioClip crack;
 	public Sprite[] hitsprites;
 	public static int breakableCount = 0;
-	public GameObject smoke;
 
 	private int timesHeat;
-	private LevelManager levelManager;
 	private bool isBreakable;
 
 	// Use this for initialization
@@ -23,7 +21,6 @@ public class Brick : MonoBehaviour {
 		}
 
 		timesHeat = 0;
-		levelManager = GameObject.FindObjectOfType<LevelManager>();
 	}
 	
 	// Update is called once per frame
@@ -33,9 +30,7 @@ public class Brick : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
-		//AudioSource.PlayClipAtPoint (crack, transform.position, 0.8f);
 		if (isBreakable) {
-			AudioSource.PlayClipAtPoint (crack, transform.position, 0.8f);
 			HandleHits ();
 		}
 	}
@@ -45,21 +40,16 @@ public class Brick : MonoBehaviour {
 		int maxHits = hitsprites.Length + 1;
 		if (timesHeat >= maxHits) {
 			breakableCount--;
-			levelManager.BrickDestroyed();
-			//PuffSmoke();
-			Destroy (gameObject);
+			Destroy(gameObject);
+			if (Brick.breakableCount <= 0) {
+				PlayerController.returnToLevel(2);
+				SceneManager.LoadScene(2);
+			}
 		} else {
 			LoadSprites();
 		}
 	}
 
-	void PuffSmoke () {
-			//smoke.GetComponent<ParticleSystem>().startColor = gameObject.GetComponent<SpriteRenderer>().color;
-            //Instantiate(smoke, gameObject.transform.position, Quaternion.identity);
-            //Below is the alternate method.
-            GameObject smokePuff = Instantiate (smoke, transform.position, Quaternion.identity) as GameObject;
-			smokePuff.GetComponent<ParticleSystem>().startColor = gameObject.GetComponent<SpriteRenderer>().color;
-	}
 
 	void LoadSprites ()
 	{
@@ -71,8 +61,4 @@ public class Brick : MonoBehaviour {
 		}
 	}
 
-	// TODO Remove this method once we actually win!
-	//void SimulateWin () {
-		//levelManager.LoadNextLevel();
-	//}
 }

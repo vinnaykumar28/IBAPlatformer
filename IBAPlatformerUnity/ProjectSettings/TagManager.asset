@@ -15,6 +15,11 @@ TagManager:
   - Platform
   - End
   - Game2
+  - Obstacle
+  - food
+  - Breakable
+  - startImage
+  - Game1
   layers:
   - Default
   - TransparentFX

@@ -41,10 +41,16 @@ public class PlayerController : MonoBehaviour
         GetComponent<AudioSource>().Pause();
 
         if(setPlayerPosition){
-            if(SetPosLvl == 4){
+            if(SetPosLvl == 2){
+                trans.position = new Vector3(44.79f, 29.7277f, 0);
+                SPR.flipX = true;
+            }
+            else if(SetPosLvl == 4){
                 trans.position = new Vector3(-35.34f, -7.346163f, 0);
                 SPR.flipX = false;
             }
+
+            
 
             setPlayerPosition = false;
             SetPosLvl = 0;
@@ -166,6 +172,7 @@ public class PlayerController : MonoBehaviour
         else if(rightMove){
             RightMobile();
         }
+        
 
         for (int i = 0; i < dimension.Length; i++)
         {
@@ -318,11 +325,16 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(0);
         }
 
-        else if (other.gameObject.CompareTag("Game2") && !checkdim)
+        else if (other.gameObject.CompareTag("Game1"))
         {
-            SceneManager.LoadScene(7);
+            Debug.Log("test!");
+            SceneManager.LoadScene(7);            
         }
 
+        else if (other.gameObject.CompareTag("Game2") && !checkdim)
+        {
+            SceneManager.LoadScene(8);
+        }        
     }
 
     public static void returnToLevel(int lvl){
