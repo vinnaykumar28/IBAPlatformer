@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
+    public GameObject Parent;
     GameObject token;
     public Text clickCountTxt;
     public Button easyBtn;
@@ -24,15 +25,15 @@ public class GameControl : MonoBehaviour
     void StartGame()
     {
         int startTokenCount = numOfTokens;
-        float xPosition = -6.2f;
+        float xPosition = -7.2f;
         float yPosition = yStart;
         int row = 1;
         // The camera orthographicSize is 1/2 the height of the window
-        float ortho = Camera.main.orthographicSize / 2.0f;
+        float ortho = Camera.main.orthographicSize / 7.0f;
         for (int i = 1; i < startTokenCount + 1; i++)
         {
             shuffleNum = rnd.Next(0, (numOfTokens));
-            var temp = Instantiate(token, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
+            var temp = Instantiate(token, new Vector3(xPosition, yPosition, 0), Quaternion.identity, Parent.transform);
             temp.GetComponent<MainToken>().faceIndex = faceIndexes[shuffleNum];
             temp.transform.localScale = new Vector3(ortho / tokenScale, ortho / tokenScale, 0);
             faceIndexes.Remove(faceIndexes[shuffleNum]);
@@ -41,7 +42,7 @@ public class GameControl : MonoBehaviour
             if (i % 4 < 1)
             {
                 yPosition = yPosition + yChange;
-                xPosition = -6.2f;
+                xPosition = -7.2f;
                 row++;
             }
         }
