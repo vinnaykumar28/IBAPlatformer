@@ -6,6 +6,6 @@ using UnityEngine.SceneManagement;
 public class LooseCollider : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D trigger) {
-		SceneManager.LoadScene(7);
+		SceneManager.LoadScene(6);
 	}
 }
