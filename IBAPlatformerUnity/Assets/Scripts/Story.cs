@@ -25,6 +25,6 @@ public class Story : MonoBehaviour
     }
 
     static public void newGame(){
-        index = 0;
+        index = 1;
     }
 }

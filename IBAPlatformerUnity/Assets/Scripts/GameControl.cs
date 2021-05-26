@@ -94,8 +94,8 @@ public class GameControl : MonoBehaviour
         }
 
         if(finalMatched == 4){
-            PlayerController.returnToLevel(4);
-            SceneManager.LoadScene(4);
+            PlayerController.returnToLevel(3);
+            SceneManager.LoadScene(3);
         }
     }
 
