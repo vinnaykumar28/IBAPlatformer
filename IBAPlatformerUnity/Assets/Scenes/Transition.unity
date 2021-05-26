@@ -1515,7 +1515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &505994508
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1689,10 +1689,6 @@ MonoBehaviour:
   - Does this all seem real to you? Or do you think this is all in your head? You
     see, there are more entities here than just you and I. Avoid them if you need
     answers.
-  - You seem to be focusing more and more. You are able to see the "middle world",
-    a place that is only in the real world, but still hidden from plain sight. I
-    am surprised at how determined you are to find answers. Do not worry, you shall
-    find them soon.
   - 'I sense that your journey is close to an end. You will find your answers very
     soon, but they will not come easy. Perhaps the journey has trained you for this.
     I shall not reveal who I am, but know that I intend to help. '
