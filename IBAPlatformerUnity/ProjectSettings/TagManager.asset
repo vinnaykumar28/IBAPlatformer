@@ -20,6 +20,7 @@ TagManager:
   - Breakable
   - startImage
   - Game1
+  - Coin
   layers:
   - Default
   - TransparentFX

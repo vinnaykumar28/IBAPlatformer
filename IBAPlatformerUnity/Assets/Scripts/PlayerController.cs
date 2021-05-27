@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer SPR;
     public GameObject MenuUI;
     public GameObject DialogueUI;
+    public GameObject smoke;
     //public GameObject QuestionUI;
     public GameObject[] dimension;
     public GameObject dimensionTilemap;
@@ -313,6 +314,14 @@ public class PlayerController : MonoBehaviour
             Story.SetIndex();
             SceneManager.LoadScene("Transition");
             //Story.SetIndex();
+        }
+
+        else if (other.gameObject.CompareTag("Coin"))
+        {
+            //this.GetComponent<AudioSource>().Pause();
+            other.gameObject.GetComponent<AudioSource>().Play();
+            //Debug.Log("HI");
+            //Destroy(other.gameObject);
         }
 
         else if (other.gameObject.CompareTag("Acid"))
