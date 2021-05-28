@@ -8796,7 +8796,6 @@ MonoBehaviour:
   jumpCheck: 0
   MenuUI: {fileID: 308335873}
   DialogueUI: {fileID: 822209604}
-  smoke: {fileID: 0}
   dimension:
   - {fileID: 306172655}
   - {fileID: 248072398}
@@ -20729,7 +20728,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 41a1dc1d4f6d60f43bd30f134b9fd234, type: 2}
+  - {fileID: 2100000, guid: 2c14c73cffcc76346a7b50b3394b3e93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -48120,7 +48119,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 41a1dc1d4f6d60f43bd30f134b9fd234, type: 2}
+  - {fileID: 2100000, guid: 2c14c73cffcc76346a7b50b3394b3e93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
