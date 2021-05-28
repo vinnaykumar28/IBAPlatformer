@@ -15,10 +15,10 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer SPR;
     public GameObject MenuUI;
     public GameObject DialogueUI;
-    public GameObject smoke;
     //public GameObject QuestionUI;
     public GameObject[] dimension;
     public GameObject dimensionTilemap;
+    public AudioSource easterAudio;
     // public Button ButtonLeft;
     // public Button ButtonRight;
     // public Button ButtonDimension;
@@ -292,14 +292,12 @@ public class PlayerController : MonoBehaviour
         // {
         //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         // } 
-        if (other.gameObject.CompareTag("Player"))
-        {
+        if (other.gameObject.CompareTag("Player")){
             MenuUI.SetActive(true);
             DialogueUI.SetActive(true);
             //anime.SetBool("ghostWalk", true);
         }   
-        else if (other.gameObject.CompareTag("Goal"))
-        {
+        else if (other.gameObject.CompareTag("Goal")){
             // MenuUI.SetActive(true);
             // QuestionUI.SetActive(true); 
             // Story.SetIndex();
@@ -307,43 +305,32 @@ public class PlayerController : MonoBehaviour
             //Story.SetIndex();
             SceneManager.LoadScene(Story.getIndex());
         }
-        else if (other.gameObject.CompareTag("Enemy"))
-        {
+        else if (other.gameObject.CompareTag("Enemy")){
             // MenuUI.SetActive(true);
             // QuestionUI.SetActive(true); 
             Story.SetIndex();
             SceneManager.LoadScene("Transition");
             //Story.SetIndex();
         }
-
-        else if (other.gameObject.CompareTag("Coin"))
-        {
+        else if (other.gameObject.CompareTag("Coin")){
             //this.GetComponent<AudioSource>().Pause();
-            other.gameObject.GetComponent<AudioSource>().Play();
+            easterAudio.Play();
             //Debug.Log("HI");
             //Destroy(other.gameObject);
         }
-
-        else if (other.gameObject.CompareTag("Acid"))
-        {
+        else if (other.gameObject.CompareTag("Acid")){
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-
-        else if (other.gameObject.CompareTag("End"))
-        {
+        else if (other.gameObject.CompareTag("End")){
             SceneManager.LoadScene(0);
         }
-
-        else if (other.gameObject.CompareTag("Game1"))
-        {
+        else if (other.gameObject.CompareTag("Game1")){
             Debug.Log("test!");
             SceneManager.LoadScene(6);            
         }
-
-        else if (other.gameObject.CompareTag("Game2") && !checkdim)
-        {
+        else if (other.gameObject.CompareTag("Game2") && !checkdim){
             SceneManager.LoadScene(7);
-        }        
+        }  
     }
 
     public static void returnToLevel(int lvl){
