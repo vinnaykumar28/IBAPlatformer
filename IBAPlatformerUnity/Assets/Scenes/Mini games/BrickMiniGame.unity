@@ -872,6 +872,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114790585941062806, guid: b5c16155e3e532b4ebc57cb14611adc0, type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1851705903}
+    - target: {fileID: 114790585941062806, guid: b5c16155e3e532b4ebc57cb14611adc0, type: 3}
+      propertyPath: startButton
+      value: 
+      objectReference: {fileID: 18023760}
+    - target: {fileID: 114790585941062806, guid: b5c16155e3e532b4ebc57cb14611adc0, type: 3}
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 0}

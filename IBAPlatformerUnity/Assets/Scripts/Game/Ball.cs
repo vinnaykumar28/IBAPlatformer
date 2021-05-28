@@ -37,4 +37,12 @@ public class Ball : MonoBehaviour {
 		hasStarted = true;
 		ballrigidbody2D.velocity = new Vector2 (2f, 10f);
 	}
+
+	public void restartBall(){
+		Vector3 adjust = new Vector3(0, 0.351f, 0);
+
+		this.transform.position = paddle.transform.position + adjust;
+		paddleToBallVector = this.transform.position - paddle.transform.position;
+		hasStarted = false;
+	}
 }
