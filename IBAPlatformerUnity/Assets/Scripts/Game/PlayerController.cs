@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     public GameObject[] dimension;
     public GameObject dimensionTilemap;
     public AudioSource easterAudio; 
+    public AudioSource zaWarudo;
+    public AudioSource jumpSound;
+    public AudioSource MainMusic;
     private bool checkdim = false;
     private bool rightMove = false;
     private bool leftMove = false;
@@ -89,6 +92,7 @@ public class PlayerController : MonoBehaviour
 
     public void JumpMobile(){
         if(!jumpCheck){
+            jumpSound.Play();
             anime.SetBool("jumpTrue", true);
             r2D.velocity = new Vector2(r2D.velocity.x, jumpForce);
             jumpCheck = true;
@@ -123,6 +127,8 @@ public class PlayerController : MonoBehaviour
 
     public void DimensionMobile(){
         if(!checkdim){
+            MainMusic.Pause();
+            zaWarudo.Play();
             for (int i = 0; i < dimension.Length; i++)
             {
                 dimension[i].SetActive(true);
@@ -131,6 +137,8 @@ public class PlayerController : MonoBehaviour
             checkdim = true;
         }
         else{
+            zaWarudo.Play();
+            MainMusic.Play();
             checkdim = false;
         }
     }
@@ -172,6 +180,11 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(3);
         print(Time.time);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    IEnumerator backToReal()
+    {
+        yield return new WaitForSeconds(2);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
