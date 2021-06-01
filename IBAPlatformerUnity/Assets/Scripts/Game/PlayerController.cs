@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         SPR = GetComponent<SpriteRenderer>();
         GetComponent<AudioSource>().Play();
         GetComponent<AudioSource>().Pause();
+        anime.SetBool("death", false);
 
         if(setPlayerPosition){
             if(SetPosLvl == 2){
@@ -53,10 +54,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -7 && SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        // if (transform.position.y < -7 && SceneManager.GetActiveScene().buildIndex == 1)
+        // {
+        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // }
 
         if(leftMove){
             LeftMobile();
@@ -165,6 +166,14 @@ public class PlayerController : MonoBehaviour
         }
     }
     
+    IEnumerator waitBeforeReload()
+    {
+        print(Time.time);
+        yield return new WaitForSeconds(3);
+        print(Time.time);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player")){
@@ -182,7 +191,9 @@ public class PlayerController : MonoBehaviour
             easterAudio.Play();
         }
         else if (other.gameObject.CompareTag("Acid")){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            anime.SetBool("death", true);
+            StartCoroutine(waitBeforeReload());
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else if (other.gameObject.CompareTag("End")){
             SceneManager.LoadScene(0);
