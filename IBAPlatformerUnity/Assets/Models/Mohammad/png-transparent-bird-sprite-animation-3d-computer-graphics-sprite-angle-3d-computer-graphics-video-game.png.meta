@@ -1,0 +1,648 @@
+fileFormatVersion: 2
+guid: c9d79942968fc5a4589adf8d76eb74c4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6918345884025772318
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_0
+  - first:
+      213: -8923124165240500867
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_1
+  - first:
+      213: 757192703205792966
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_2
+  - first:
+      213: -4042010253399880598
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_3
+  - first:
+      213: -824701729942594800
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_4
+  - first:
+      213: 9112112658383674707
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_5
+  - first:
+      213: -6500114130768328208
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_6
+  - first:
+      213: 7545988344427315393
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_7
+  - first:
+      213: -4107836566580010907
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_8
+  - first:
+      213: -3129668539848824855
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_9
+  - first:
+      213: -1349444541253726739
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_10
+  - first:
+      213: -1590566291056170665
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_11
+  - first:
+      213: -7490046914821055742
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_12
+  - first:
+      213: -4174522157929185126
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_13
+  - first:
+      213: -8341060131076223825
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_14
+  - first:
+      213: 65408206371801374
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_15
+  - first:
+      213: 7102855084299694130
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_16
+  - first:
+      213: -2641738006584644320
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_17
+  - first:
+      213: 2356967256046086256
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_18
+  - first:
+      213: -7725830147900219010
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_19
+  - first:
+      213: -248457292868821486
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_20
+  - first:
+      213: 3202009561938439286
+    second: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_21
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1954a23de6e20060800000000000000
+      internalID: 6918345884025772318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7dc22439d1ba2480800000000000000
+      internalID: -8923124165240500867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc591570c6128a00800000000000000
+      internalID: 757192703205792966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c0d9b0715e7e7c0800000000000000
+      internalID: -4042010253399880598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01b1f1565221e84f0800000000000000
+      internalID: -824701729942594800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35d9c4c4f2ab47e70800000000000000
+      internalID: 9112112658383674707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_6
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f98e0c13a4fac5a0800000000000000
+      internalID: -6500114130768328208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_7
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c004dc3b6cb8b860800000000000000
+      internalID: 7545988344427315393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_8
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56063ad28680ef6c0800000000000000
+      internalID: -4107836566580010907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e768917b0f2194d0800000000000000
+      internalID: -3129668539848824855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded4b72e65fc54de0800000000000000
+      internalID: -1349444541253726739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759e2eda26c2de9e0800000000000000
+      internalID: -1590566291056170665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_12
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b9413d3020e0890800000000000000
+      internalID: -7490046914821055742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_13
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9042a5073e1116c0800000000000000
+      internalID: -4174522157929185126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_14
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac470de00a9e3c80800000000000000
+      internalID: -8341060131076223825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e19cf2aca6068e000800000000000000
+      internalID: 65408206371801374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_16
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 230b2ce0119629260800000000000000
+      internalID: 7102855084299694130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_17
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02dafdf8749a65bd0800000000000000
+      internalID: -2641738006584644320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_18
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 078aadb4b31a5b020800000000000000
+      internalID: 2356967256046086256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_19
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e716767e96658c490800000000000000
+      internalID: -7725830147900219010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ed2b4986d4d8cf0800000000000000
+      internalID: -248457292868821486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: png-transparent-bird-sprite-animation-3d-computer-graphics-sprite-angle-3d-computer-graphics-video-game_21
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67caeba4bb2df6c20800000000000000
+      internalID: 3202009561938439286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a3fd5470f5c7f4845bfdb05487756144
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

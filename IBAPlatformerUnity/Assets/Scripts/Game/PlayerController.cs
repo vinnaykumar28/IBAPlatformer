@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Transform trans;
     private Rigidbody2D r2D;
     private SpriteRenderer SPR;
+    public GameObject fadeOrigin;
     public GameObject MenuUI;
     public GameObject DialogueUI;
     public GameObject[] dimension;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool checkdim = false;
     private bool rightMove = false;
     private bool leftMove = false;
+    private bool restart = false;
     private Animator anime;
     private static bool setPlayerPosition = false;
     private static int SetPosLvl = 0; 
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
         SPR = GetComponent<SpriteRenderer>();
         GetComponent<AudioSource>().Play();
         GetComponent<AudioSource>().Pause();
+        restart = true;
         anime.SetBool("death", false);
 
         if(setPlayerPosition){
@@ -57,6 +60,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        fromBlackScreen(restart);
+
         // if (transform.position.y < -7 && SceneManager.GetActiveScene().buildIndex == 1)
         // {
         //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -176,15 +181,36 @@ public class PlayerController : MonoBehaviour
     
     IEnumerator waitBeforeReload()
     {
-        print(Time.time);
-        yield return new WaitForSeconds(3);
-        print(Time.time);
+        //print(Time.time);
+        yield return new WaitForSeconds(2);
+        //print(Time.time);
+        restart = false;
+        toBlackScreen(restart);
+        //yield return new WaitForSeconds(2);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     IEnumerator backToReal()
     {
         yield return new WaitForSeconds(2);
+    }
+
+    public void fromBlackScreen(bool status)
+    {
+        //This is when the level starts or arrive at a tp
+        if (status)
+        {
+            fadeOrigin.transform.localScale = Vector3.Lerp(fadeOrigin.transform.localScale, new Vector3(0, 0, 1.0f), 0.05f);
+        }
+    }
+
+    public void toBlackScreen(bool status)
+    {
+        //This is when you die or collide with a tp invoker
+        if (!status)
+        {
+            fadeOrigin.transform.localScale = Vector3.Lerp(fadeOrigin.transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.1f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -205,6 +231,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Acid")){
             anime.SetBool("death", true);
+            // restart = false;
+            // toBlackScreen(restart);
             StartCoroutine(waitBeforeReload());
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
