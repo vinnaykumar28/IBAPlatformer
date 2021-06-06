@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 8f;
     public bool jumpCheck = false;
+    private bool labyrinthCheck = false;
     private Transform trans;
     private Rigidbody2D r2D;
     private SpriteRenderer SPR;
     public GameObject fadeOrigin;
     public GameObject teleSquare;
+    public GameObject teleBack;
     public GameObject MenuUI;
     public GameObject DialogueUI;
     public GameObject[] dimension;
@@ -218,9 +220,19 @@ public class PlayerController : MonoBehaviour
     {
         // fadeOrigin.transform.localScale = Vector3.Lerp(fadeOrigin.transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.1f);
         yield return new WaitForSeconds(2);
+        //toBlackScreen(false);
         //GameObject positionHolder = new GameObject();
         //positionHolder.GetComponent<Transform>().position = trans.position; //Placeholder has the position of player when he was near statue.
-        trans.position = teleSquare.GetComponent<Transform>().position; //Player is now moved to the teleSquare.
+        if (!labyrinthCheck)
+        {
+            labyrinthCheck = true;
+            trans.position = teleSquare.GetComponent<Transform>().position; //Player is now moved to the teleSquare.
+        }
+        else
+        {
+            trans.position = teleBack.GetComponent<Transform>().position; //Player is now moved back to main zone side..
+        }
+        //trans.position = teleSquare.GetComponent<Transform>().position; //Player is now moved to the teleSquare.
         //teleSquare.GetComponent<Transform>().position = positionHolder.GetComponent<Transform>().position; //teleSquare is now at the original position of the player.
         //fadeOrigin.transform.localScale = Vector3.Lerp(fadeOrigin.transform.localScale, new Vector3(0, 0, 1.0f), 0.05f);
     }
@@ -253,12 +265,17 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Game1")){
             //SDebug.Log("test!");
-            fadeOrigin.transform.localScale = Vector3.Lerp(fadeOrigin.transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.1f);
+            //labyrinthCheck = true;
+            //toBlackScreen(false);c
+            //fadeOrigin.transform.localScale = Vector3.Lerp(fadeOrigin.transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.1f);
             StartCoroutine(labyrinthPortal());
             //SceneManager.LoadScene(6);            
         }
         else if (other.gameObject.CompareTag("Game2") && !checkdim){
-            SceneManager.LoadScene(7);
+            //labyrinthCheck = true;
+            Debug.Log("Pog");
+            StartCoroutine(labyrinthPortal());
+            //SceneManager.LoadScene(7);
         }  
     }
 
