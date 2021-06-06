@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    private int gemCount = 0;
     public float moveSpeed = 5f;
     public float jumpForce = 8f;
     public bool jumpCheck = false;
@@ -225,11 +226,12 @@ public class PlayerController : MonoBehaviour
         //positionHolder.GetComponent<Transform>().position = trans.position; //Placeholder has the position of player when he was near statue.
         if (!labyrinthCheck)
         {
-            labyrinthCheck = true;
+            //labyrinthCheck = true;
             trans.position = teleSquare.GetComponent<Transform>().position; //Player is now moved to the teleSquare.
         }
         else
         {
+            Debug.Log("Came here");
             trans.position = teleBack.GetComponent<Transform>().position; //Player is now moved back to main zone side..
         }
         //trans.position = teleSquare.GetComponent<Transform>().position; //Player is now moved to the teleSquare.
@@ -253,6 +255,15 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("Coin")){
             easterAudio.Play();
         }
+
+        else if (other.gameObject.CompareTag("Gem")){
+            gemCount++;
+            //easterAudio.Play();
+            Debug.Log(gemCount);
+            other.gameObject.GetComponent<AudioSource>().Play();
+            Destroy(other.gameObject);
+        }
+
         else if (other.gameObject.CompareTag("Acid")){
             anime.SetBool("death", true);
             // restart = false;
@@ -267,13 +278,21 @@ public class PlayerController : MonoBehaviour
             //SDebug.Log("test!");
             //labyrinthCheck = true;
             //toBlackScreen(false);c
+            if (gemCount == 3) 
+            {
+                labyrinthCheck = true;
+            }
             //fadeOrigin.transform.localScale = Vector3.Lerp(fadeOrigin.transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.1f);
             StartCoroutine(labyrinthPortal());
             //SceneManager.LoadScene(6);            
         }
         else if (other.gameObject.CompareTag("Game2") && !checkdim){
             //labyrinthCheck = true;
-            Debug.Log("Pog");
+            //Debug.Log("Pog");
+            if (gemCount == 3) 
+            {
+                labyrinthCheck = true;
+            }
             StartCoroutine(labyrinthPortal());
             //SceneManager.LoadScene(7);
         }  

@@ -21,6 +21,7 @@ TagManager:
   - startImage
   - Game1
   - Coin
+  - Gem
   layers:
   - Default
   - TransparentFX
