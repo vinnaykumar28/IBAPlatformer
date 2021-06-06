@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D r2D;
     private SpriteRenderer SPR;
     public GameObject fadeOrigin;
+    public GameObject teleSquare;
     public GameObject MenuUI;
     public GameObject DialogueUI;
     public GameObject[] dimension;
@@ -213,6 +214,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator labyrinthPortal()
+    {
+        // fadeOrigin.transform.localScale = Vector3.Lerp(fadeOrigin.transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.1f);
+        yield return new WaitForSeconds(2);
+        //GameObject positionHolder = new GameObject();
+        //positionHolder.GetComponent<Transform>().position = trans.position; //Placeholder has the position of player when he was near statue.
+        trans.position = teleSquare.GetComponent<Transform>().position; //Player is now moved to the teleSquare.
+        //teleSquare.GetComponent<Transform>().position = positionHolder.GetComponent<Transform>().position; //teleSquare is now at the original position of the player.
+        //fadeOrigin.transform.localScale = Vector3.Lerp(fadeOrigin.transform.localScale, new Vector3(0, 0, 1.0f), 0.05f);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player")){
@@ -240,8 +252,10 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(0);
         }
         else if (other.gameObject.CompareTag("Game1")){
-            Debug.Log("test!");
-            SceneManager.LoadScene(6);            
+            //SDebug.Log("test!");
+            fadeOrigin.transform.localScale = Vector3.Lerp(fadeOrigin.transform.localScale, new Vector3(100.0f, 100.0f, 1.0f), 0.1f);
+            StartCoroutine(labyrinthPortal());
+            //SceneManager.LoadScene(6);            
         }
         else if (other.gameObject.CompareTag("Game2") && !checkdim){
             SceneManager.LoadScene(7);
